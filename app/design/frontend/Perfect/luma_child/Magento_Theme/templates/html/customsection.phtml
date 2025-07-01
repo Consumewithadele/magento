@@ -1,0 +1,40 @@
+<form class="form-customer-info" action="#" method="post" data-mage-init='{"validation":{}}'>
+    <fieldset class="fieldset">
+        <legend class="legend"><span>Customer Information</span></legend>
+        <div class="field name required">
+            <label class="label" for="customer-name"><span>Name</span></label>
+            <div class="control">
+                <input type="text" id="customer-name" name="customer_name" class="input-text" required="required" data-validate="{required:true}">
+            </div>
+        </div>
+        <div class="field dob required">
+            <label class="label" for="customer-dob"><span>Date of Birth</span></label>
+            <div class="control">
+                <input type="date" id="customer-dob" name="customer_dob" class="input-text" required="required" data-validate="{required:true}">
+            </div>
+        </div>
+        <div class="field email required">
+            <label class="label" for="customer-email"><span>Email</span></label>
+            <div class="control">
+                <input type="email" id="customer-email" name="customer_email" class="input-text" required="required" data-validate="{required:true, 'validate-email':true}">
+            </div>
+        </div>
+        <div class="actions-submit">
+               <button id="customformbutton" type="submit" class="action submit primary">
+                <span>Submit</span>
+            </button>
+        </div>
+    </fieldset>
+</form>
+<div id="modal-content">
+    <?php echo "Form Data recieved";?>
+</div>
+ <script type="text/x-magento-init">
+    {
+        "#customformbutton": {
+            "cmp-modal": {
+                "target": "#modal-content" 
+            }
+        }
+    }
+    </script>
