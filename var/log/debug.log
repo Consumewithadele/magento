@@ -1,0 +1,204 @@
+[2025-06-30T10:55:36.735029+00:00] main.ERROR: Parameter validation failed
+#0 /var/www/html/magento/vendor/symfony/console/Command/Command.php(292): Magento\Setup\Console\Command\InstallCommand->initialize()
+#1 /var/www/html/magento/vendor/symfony/console/Application.php(1078): Symfony\Component\Console\Command\Command->run()
+#2 /var/www/html/magento/vendor/symfony/console/Application.php(324): Symfony\Component\Console\Application->doRunCommand()
+#3 /var/www/html/magento/vendor/magento/framework/Console/Cli.php(122): Symfony\Component\Console\Application->doRun()
+#4 /var/www/html/magento/vendor/symfony/console/Application.php(175): Magento\Framework\Console\Cli->doRun()
+#5 /var/www/html/magento/bin/magento(23): Symfony\Component\Console\Application->run()
+#6 {main} [] []
+[2025-06-30T10:57:32.355512+00:00] main.ERROR: Parameter validation failed
+#0 /var/www/html/magento/vendor/symfony/console/Command/Command.php(292): Magento\Setup\Console\Command\InstallCommand->initialize()
+#1 /var/www/html/magento/vendor/symfony/console/Application.php(1078): Symfony\Component\Console\Command\Command->run()
+#2 /var/www/html/magento/vendor/symfony/console/Application.php(324): Symfony\Component\Console\Application->doRunCommand()
+#3 /var/www/html/magento/vendor/magento/framework/Console/Cli.php(122): Symfony\Component\Console\Application->doRun()
+#4 /var/www/html/magento/vendor/symfony/console/Application.php(175): Magento\Framework\Console\Cli->doRun()
+#5 /var/www/html/magento/bin/magento(23): Symfony\Component\Console\Application->run()
+#6 {main} [] []
+[2025-06-30T11:02:08.372329+00:00] main.INFO: Source table payment_services_order_status_data_production_submitted_hash does not exist. Skipping data migration... [] []
+[2025-06-30T11:02:11.686465+00:00] main.ERROR: SQLSTATE[HY000]: General error: 1419 You do not have the SUPER privilege and binary logging is enabled (you *might* want to use the less safe log_bin_trust_function_creators variable), query was: CREATE TRIGGER trg_cataloginventory_stock_item_after_insert AFTER INSERT ON cataloginventory_stock_item FOR EACH ROW
+BEGIN
+INSERT IGNORE INTO `cataloginventory_stock_cl` (`entity_id`) VALUES (NEW.`product_id`);
+END
+#0 /var/www/html/magento/vendor/magento/framework/DB/Statement/Pdo/Mysql.php(89): Magento\Framework\DB\Statement\Pdo\Mysql->tryExecute()
+#1 /var/www/html/magento/vendor/magento/zend-db/library/Zend/Db/Statement.php(313): Magento\Framework\DB\Statement\Pdo\Mysql->_execute()
+#2 /var/www/html/magento/vendor/magento/zend-db/library/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute()
+#3 /var/www/html/magento/vendor/magento/zend-db/library/Zend/Db/Adapter/Pdo/Abstract.php(242): Zend_Db_Adapter_Abstract->query()
+#4 /var/www/html/magento/vendor/magento/framework/DB/Adapter/Pdo/Mysql.php(641): Zend_Db_Adapter_Pdo_Abstract->query()
+#5 /var/www/html/magento/vendor/magento/framework/DB/Adapter/Pdo/Mysql.php(667): Magento\Framework\DB\Adapter\Pdo\Mysql->Magento\Framework\DB\Adapter\Pdo\{closure}()
+#6 /var/www/html/magento/vendor/magento/framework/DB/Adapter/Pdo/Mysql.php(641): Magento\Framework\DB\Adapter\Pdo\Mysql->performQuery()
+#7 /var/www/html/magento/vendor/magento/framework/DB/Adapter/Pdo/Mysql.php(753): Magento\Framework\DB\Adapter\Pdo\Mysql->_query()
+#8 /var/www/html/magento/generated/code/Magento/Framework/DB/Adapter/Pdo/Mysql/Interceptor.php(104): Magento\Framework\DB\Adapter\Pdo\Mysql->multiQuery()
+#9 /var/www/html/magento/vendor/magento/framework/DB/Adapter/Pdo/Mysql.php(4195): Magento\Framework\DB\Adapter\Pdo\Mysql\Interceptor->multiQuery()
+#10 /var/www/html/magento/generated/code/Magento/Framework/DB/Adapter/Pdo/Mysql/Interceptor.php(851): Magento\Framework\DB\Adapter\Pdo\Mysql->createTrigger()
+#11 /var/www/html/magento/vendor/magento/framework/Mview/View/Subscription.php(193): Magento\Framework\DB\Adapter\Pdo\Mysql\Interceptor->createTrigger()
+#12 /var/www/html/magento/vendor/magento/framework/Mview/View/Subscription.php(166): Magento\Framework\Mview\View\Subscription->saveTrigger()
+#13 /var/www/html/magento/vendor/magento/framework/Mview/View.php(211): Magento\Framework\Mview\View\Subscription->create()
+#14 /var/www/html/magento/generated/code/Magento/Framework/Mview/View/Interceptor.php(95): Magento\Framework\Mview\View->subscribe()
+#15 /var/www/html/magento/vendor/magento/module-indexer/Model/Indexer.php(326): Magento\Framework\Mview\View\Interceptor->subscribe()
+#16 /var/www/html/magento/vendor/magento/framework/Interception/Interceptor.php(58): Magento\Indexer\Model\Indexer->setScheduled()
+#17 /var/www/html/magento/vendor/magento/framework/Interception/Interceptor.php(138): Magento\Indexer\Model\Indexer\Interceptor->___callParent()
+#18 /var/www/html/magento/vendor/magento/module-data-exporter/Plugin/ForceExporterIndexerModeOnSchedule.php(53): Magento\Indexer\Model\Indexer\Interceptor->Magento\Framework\Interception\{closure}()
+#19 /var/www/html/magento/vendor/magento/framework/Interception/Interceptor.php(135): Magento\DataExporter\Plugin\ForceExporterIndexerModeOnSchedule->aroundSetScheduled()
+#20 /var/www/html/magento/vendor/magento/framework/Interception/Interceptor.php(153): Magento\Indexer\Model\Indexer\Interceptor->Magento\Framework\Interception\{closure}()
+#21 /var/www/html/magento/generated/code/Magento/Indexer/Model/Indexer/Interceptor.php(167): Magento\Indexer\Model\Indexer\Interceptor->___callPlugins()
+#22 /var/www/html/magento/vendor/magento/module-indexer/Model/Indexer/DependencyDecorator.php(201): Magento\Indexer\Model\Indexer\Interceptor->setScheduled()
+#23 /var/www/html/magento/vendor/magento/framework/Interception/Interceptor.php(58): Magento\Indexer\Model\Indexer\DependencyDecorator->setScheduled()
+#24 /var/www/html/magento/vendor/magento/framework/Interception/Interceptor.php(138): Magento\Indexer\Model\Indexer\DependencyDecorator\Interceptor->___callParent()
+#25 /var/www/html/magento/vendor/magento/module-data-exporter/Plugin/ForceExporterIndexerModeOnSchedule.php(53): Magento\Indexer\Model\Indexer\DependencyDecorator\Interceptor->Magento\Framework\Interception\{closure}()
+#26 /var/www/html/magento/vendor/magento/framework/Interception/Interceptor.php(135): Magento\DataExporter\Plugin\ForceExporterIndexerModeOnSchedule->aroundSetScheduled()
+#27 /var/www/html/magento/vendor/magento/framework/Interception/Interceptor.php(153): Magento\Indexer\Model\Indexer\DependencyDecorator\Interceptor->Magento\Framework\Interception\{closure}()
+#28 /var/www/html/magento/generated/code/Magento/Indexer/Model/Indexer/DependencyDecorator/Interceptor.php(149): Magento\Indexer\Model\Indexer\DependencyDecorator\Interceptor->___callPlugins()
+#29 /var/www/html/magento/vendor/magento/module-indexer/Setup/Recurring.php(100): Magento\Indexer\Model\Indexer\DependencyDecorator\Interceptor->setScheduled()
+#30 /var/www/html/magento/setup/src/Magento/Setup/Model/Installer.php(1171): Magento\Indexer\Setup\Recurring->install()
+#31 /var/www/html/magento/setup/src/Magento/Setup/Model/Installer.php(972): Magento\Setup\Model\Installer->handleDBSchemaData()
+#32 [internal function]: Magento\Setup\Model\Installer->installSchema()
+#33 /var/www/html/magento/setup/src/Magento/Setup/Model/Installer.php(422): call_user_func_array()
+#34 /var/www/html/magento/setup/src/Magento/Setup/Console/Command/InstallCommand.php(239): Magento\Setup\Model\Installer->install()
+#35 /var/www/html/magento/vendor/symfony/console/Command/Command.php(326): Magento\Setup\Console\Command\InstallCommand->execute()
+#36 /var/www/html/magento/vendor/symfony/console/Application.php(1078): Symfony\Component\Console\Command\Command->run()
+#37 /var/www/html/magento/vendor/symfony/console/Application.php(324): Symfony\Component\Console\Application->doRunCommand()
+#38 /var/www/html/magento/vendor/magento/framework/Console/Cli.php(122): Symfony\Component\Console\Application->doRun()
+#39 /var/www/html/magento/vendor/symfony/console/Application.php(175): Magento\Framework\Console\Cli->doRun()
+#40 /var/www/html/magento/bin/magento(23): Symfony\Component\Console\Application->run()
+#41 {main} [] []
+[2025-06-30T11:13:12.935951+00:00] main.ERROR: Search engine 'elasticsearch7' is not an available search engine.
+#0 /var/www/html/magento/setup/src/Magento/Setup/Model/SearchConfig.php(62): Magento\Setup\Model\SearchConfig->validateSearchEngineSelection()
+#1 /var/www/html/magento/setup/src/Magento/Setup/Model/Installer.php(1261): Magento\Setup\Model\SearchConfig->saveConfiguration()
+#2 [internal function]: Magento\Setup\Model\Installer->installSearchConfiguration()
+#3 /var/www/html/magento/setup/src/Magento/Setup/Model/Installer.php(422): call_user_func_array()
+#4 /var/www/html/magento/setup/src/Magento/Setup/Console/Command/InstallCommand.php(239): Magento\Setup\Model\Installer->install()
+#5 /var/www/html/magento/vendor/symfony/console/Command/Command.php(326): Magento\Setup\Console\Command\InstallCommand->execute()
+#6 /var/www/html/magento/vendor/symfony/console/Application.php(1078): Symfony\Component\Console\Command\Command->run()
+#7 /var/www/html/magento/vendor/symfony/console/Application.php(324): Symfony\Component\Console\Application->doRunCommand()
+#8 /var/www/html/magento/vendor/magento/framework/Console/Cli.php(122): Symfony\Component\Console\Application->doRun()
+#9 /var/www/html/magento/vendor/symfony/console/Application.php(175): Magento\Framework\Console\Cli->doRun()
+#10 /var/www/html/magento/bin/magento(23): Symfony\Component\Console\Application->run()
+#11 {main} [] []
+[2025-06-30T11:15:43.096138+00:00] main.DEBUG: Source class "\Phalcon\Http\Message\Response" for "Phalcon\Http\Message\ResponseFactory" generation does not exist. {"exception":"[object] (RuntimeException(code: 0): Source class \"\\Phalcon\\Http\\Message\\Response\" for \"Phalcon\\Http\\Message\\ResponseFactory\" generation does not exist. at /var/www/html/magento/vendor/magento/framework/Code/Generator.php:223)"} []
+[2025-06-30T11:15:43.096665+00:00] main.DEBUG: Source class "\Phalcon\Http\Message\Response" for "Phalcon\Http\Message\ResponseFactory" generation does not exist. {"exception":"[object] (RuntimeException(code: 0): Source class \"\\Phalcon\\Http\\Message\\Response\" for \"Phalcon\\Http\\Message\\ResponseFactory\" generation does not exist. at /var/www/html/magento/vendor/magento/framework/Code/Generator.php:223)"} []
+[2025-06-30T11:15:43.097517+00:00] main.DEBUG: Source class "\Nyholm\Psr7\Factory\Psr17" for "Nyholm\Psr7\Factory\Psr17Factory" generation does not exist. {"exception":"[object] (RuntimeException(code: 0): Source class \"\\Nyholm\\Psr7\\Factory\\Psr17\" for \"Nyholm\\Psr7\\Factory\\Psr17Factory\" generation does not exist. at /var/www/html/magento/vendor/magento/framework/Code/Generator.php:223)"} []
+[2025-06-30T11:15:43.097695+00:00] main.DEBUG: Source class "\Nyholm\Psr7\Factory\Psr17" for "Nyholm\Psr7\Factory\Psr17Factory" generation does not exist. {"exception":"[object] (RuntimeException(code: 0): Source class \"\\Nyholm\\Psr7\\Factory\\Psr17\" for \"Nyholm\\Psr7\\Factory\\Psr17Factory\" generation does not exist. at /var/www/html/magento/vendor/magento/framework/Code/Generator.php:223)"} []
+[2025-06-30T11:15:43.100711+00:00] main.DEBUG: Source class "\Phalcon\Http\Message\Stream" for "Phalcon\Http\Message\StreamFactory" generation does not exist. {"exception":"[object] (RuntimeException(code: 0): Source class \"\\Phalcon\\Http\\Message\\Stream\" for \"Phalcon\\Http\\Message\\StreamFactory\" generation does not exist. at /var/www/html/magento/vendor/magento/framework/Code/Generator.php:223)"} []
+[2025-06-30T11:15:43.100926+00:00] main.DEBUG: Source class "\Phalcon\Http\Message\Stream" for "Phalcon\Http\Message\StreamFactory" generation does not exist. {"exception":"[object] (RuntimeException(code: 0): Source class \"\\Phalcon\\Http\\Message\\Stream\" for \"Phalcon\\Http\\Message\\StreamFactory\" generation does not exist. at /var/www/html/magento/vendor/magento/framework/Code/Generator.php:223)"} []
+[2025-06-30T11:15:43.101147+00:00] main.DEBUG: Source class "\Nyholm\Psr7\Factory\Psr17" for "Nyholm\Psr7\Factory\Psr17Factory" generation does not exist. {"exception":"[object] (RuntimeException(code: 0): Source class \"\\Nyholm\\Psr7\\Factory\\Psr17\" for \"Nyholm\\Psr7\\Factory\\Psr17Factory\" generation does not exist. at /var/www/html/magento/vendor/magento/framework/Code/Generator.php:223)"} []
+[2025-06-30T11:15:43.101257+00:00] main.DEBUG: Source class "\Nyholm\Psr7\Factory\Psr17" for "Nyholm\Psr7\Factory\Psr17Factory" generation does not exist. {"exception":"[object] (RuntimeException(code: 0): Source class \"\\Nyholm\\Psr7\\Factory\\Psr17\" for \"Nyholm\\Psr7\\Factory\\Psr17Factory\" generation does not exist. at /var/www/html/magento/vendor/magento/framework/Code/Generator.php:223)"} []
+[2025-06-30T11:15:43.111331+00:00] main.DEBUG: Source class "\Phalcon\Http\Message\Uri" for "Phalcon\Http\Message\UriFactory" generation does not exist. {"exception":"[object] (RuntimeException(code: 0): Source class \"\\Phalcon\\Http\\Message\\Uri\" for \"Phalcon\\Http\\Message\\UriFactory\" generation does not exist. at /var/www/html/magento/vendor/magento/framework/Code/Generator.php:223)"} []
+[2025-06-30T11:15:43.111465+00:00] main.DEBUG: Source class "\Phalcon\Http\Message\Uri" for "Phalcon\Http\Message\UriFactory" generation does not exist. {"exception":"[object] (RuntimeException(code: 0): Source class \"\\Phalcon\\Http\\Message\\Uri\" for \"Phalcon\\Http\\Message\\UriFactory\" generation does not exist. at /var/www/html/magento/vendor/magento/framework/Code/Generator.php:223)"} []
+[2025-06-30T11:15:43.111610+00:00] main.DEBUG: Source class "\Nyholm\Psr7\Factory\Psr17" for "Nyholm\Psr7\Factory\Psr17Factory" generation does not exist. {"exception":"[object] (RuntimeException(code: 0): Source class \"\\Nyholm\\Psr7\\Factory\\Psr17\" for \"Nyholm\\Psr7\\Factory\\Psr17Factory\" generation does not exist. at /var/www/html/magento/vendor/magento/framework/Code/Generator.php:223)"} []
+[2025-06-30T11:15:43.111675+00:00] main.DEBUG: Source class "\Nyholm\Psr7\Factory\Psr17" for "Nyholm\Psr7\Factory\Psr17Factory" generation does not exist. {"exception":"[object] (RuntimeException(code: 0): Source class \"\\Nyholm\\Psr7\\Factory\\Psr17\" for \"Nyholm\\Psr7\\Factory\\Psr17Factory\" generation does not exist. at /var/www/html/magento/vendor/magento/framework/Code/Generator.php:223)"} []
+[2025-06-30T11:15:43.116887+00:00] main.DEBUG: Source class "\Phalcon\Http\Message\ServerRequest" for "Phalcon\Http\Message\ServerRequestFactory" generation does not exist. {"exception":"[object] (RuntimeException(code: 0): Source class \"\\Phalcon\\Http\\Message\\ServerRequest\" for \"Phalcon\\Http\\Message\\ServerRequestFactory\" generation does not exist. at /var/www/html/magento/vendor/magento/framework/Code/Generator.php:223)"} []
+[2025-06-30T11:15:43.117044+00:00] main.DEBUG: Source class "\Phalcon\Http\Message\ServerRequest" for "Phalcon\Http\Message\ServerRequestFactory" generation does not exist. {"exception":"[object] (RuntimeException(code: 0): Source class \"\\Phalcon\\Http\\Message\\ServerRequest\" for \"Phalcon\\Http\\Message\\ServerRequestFactory\" generation does not exist. at /var/www/html/magento/vendor/magento/framework/Code/Generator.php:223)"} []
+[2025-06-30T11:15:43.117208+00:00] main.DEBUG: Source class "\Nyholm\Psr7\Factory\Psr17" for "Nyholm\Psr7\Factory\Psr17Factory" generation does not exist. {"exception":"[object] (RuntimeException(code: 0): Source class \"\\Nyholm\\Psr7\\Factory\\Psr17\" for \"Nyholm\\Psr7\\Factory\\Psr17Factory\" generation does not exist. at /var/www/html/magento/vendor/magento/framework/Code/Generator.php:223)"} []
+[2025-06-30T11:15:43.117274+00:00] main.DEBUG: Source class "\Nyholm\Psr7\Factory\Psr17" for "Nyholm\Psr7\Factory\Psr17Factory" generation does not exist. {"exception":"[object] (RuntimeException(code: 0): Source class \"\\Nyholm\\Psr7\\Factory\\Psr17\" for \"Nyholm\\Psr7\\Factory\\Psr17Factory\" generation does not exist. at /var/www/html/magento/vendor/magento/framework/Code/Generator.php:223)"} []
+[2025-06-30T11:15:43.153174+00:00] main.ERROR: Could not validate a connection to Elasticsearch. No alive nodes. All the 1 nodes seem to be down.
+#0 /var/www/html/magento/setup/src/Magento/Setup/Model/SearchConfig.php(69): Magento\Setup\Model\SearchConfig->validateSearchEngine()
+#1 /var/www/html/magento/setup/src/Magento/Setup/Model/Installer.php(1261): Magento\Setup\Model\SearchConfig->saveConfiguration()
+#2 [internal function]: Magento\Setup\Model\Installer->installSearchConfiguration()
+#3 /var/www/html/magento/setup/src/Magento/Setup/Model/Installer.php(422): call_user_func_array()
+#4 /var/www/html/magento/setup/src/Magento/Setup/Console/Command/InstallCommand.php(239): Magento\Setup\Model\Installer->install()
+#5 /var/www/html/magento/vendor/symfony/console/Command/Command.php(326): Magento\Setup\Console\Command\InstallCommand->execute()
+#6 /var/www/html/magento/vendor/symfony/console/Application.php(1078): Symfony\Component\Console\Command\Command->run()
+#7 /var/www/html/magento/vendor/symfony/console/Application.php(324): Symfony\Component\Console\Application->doRunCommand()
+#8 /var/www/html/magento/vendor/magento/framework/Console/Cli.php(122): Symfony\Component\Console\Application->doRun()
+#9 /var/www/html/magento/vendor/symfony/console/Application.php(175): Magento\Framework\Console\Cli->doRun()
+#10 /var/www/html/magento/bin/magento(23): Symfony\Component\Console\Application->run()
+#11 {main} [] []
+[2025-06-30T11:24:52.253001+00:00] main.DEBUG: Source class "\Phalcon\Http\Message\Response" for "Phalcon\Http\Message\ResponseFactory" generation does not exist. {"exception":"[object] (RuntimeException(code: 0): Source class \"\\Phalcon\\Http\\Message\\Response\" for \"Phalcon\\Http\\Message\\ResponseFactory\" generation does not exist. at /var/www/html/magento/vendor/magento/framework/Code/Generator.php:223)"} []
+[2025-06-30T11:24:52.253748+00:00] main.DEBUG: Source class "\Phalcon\Http\Message\Response" for "Phalcon\Http\Message\ResponseFactory" generation does not exist. {"exception":"[object] (RuntimeException(code: 0): Source class \"\\Phalcon\\Http\\Message\\Response\" for \"Phalcon\\Http\\Message\\ResponseFactory\" generation does not exist. at /var/www/html/magento/vendor/magento/framework/Code/Generator.php:223)"} []
+[2025-06-30T11:24:52.254052+00:00] main.DEBUG: Source class "\Nyholm\Psr7\Factory\Psr17" for "Nyholm\Psr7\Factory\Psr17Factory" generation does not exist. {"exception":"[object] (RuntimeException(code: 0): Source class \"\\Nyholm\\Psr7\\Factory\\Psr17\" for \"Nyholm\\Psr7\\Factory\\Psr17Factory\" generation does not exist. at /var/www/html/magento/vendor/magento/framework/Code/Generator.php:223)"} []
+[2025-06-30T11:24:52.254168+00:00] main.DEBUG: Source class "\Nyholm\Psr7\Factory\Psr17" for "Nyholm\Psr7\Factory\Psr17Factory" generation does not exist. {"exception":"[object] (RuntimeException(code: 0): Source class \"\\Nyholm\\Psr7\\Factory\\Psr17\" for \"Nyholm\\Psr7\\Factory\\Psr17Factory\" generation does not exist. at /var/www/html/magento/vendor/magento/framework/Code/Generator.php:223)"} []
+[2025-06-30T11:24:52.256062+00:00] main.DEBUG: Source class "\Phalcon\Http\Message\Stream" for "Phalcon\Http\Message\StreamFactory" generation does not exist. {"exception":"[object] (RuntimeException(code: 0): Source class \"\\Phalcon\\Http\\Message\\Stream\" for \"Phalcon\\Http\\Message\\StreamFactory\" generation does not exist. at /var/www/html/magento/vendor/magento/framework/Code/Generator.php:223)"} []
+[2025-06-30T11:24:52.256155+00:00] main.DEBUG: Source class "\Phalcon\Http\Message\Stream" for "Phalcon\Http\Message\StreamFactory" generation does not exist. {"exception":"[object] (RuntimeException(code: 0): Source class \"\\Phalcon\\Http\\Message\\Stream\" for \"Phalcon\\Http\\Message\\StreamFactory\" generation does not exist. at /var/www/html/magento/vendor/magento/framework/Code/Generator.php:223)"} []
+[2025-06-30T11:24:52.256290+00:00] main.DEBUG: Source class "\Nyholm\Psr7\Factory\Psr17" for "Nyholm\Psr7\Factory\Psr17Factory" generation does not exist. {"exception":"[object] (RuntimeException(code: 0): Source class \"\\Nyholm\\Psr7\\Factory\\Psr17\" for \"Nyholm\\Psr7\\Factory\\Psr17Factory\" generation does not exist. at /var/www/html/magento/vendor/magento/framework/Code/Generator.php:223)"} []
+[2025-06-30T11:24:52.256354+00:00] main.DEBUG: Source class "\Nyholm\Psr7\Factory\Psr17" for "Nyholm\Psr7\Factory\Psr17Factory" generation does not exist. {"exception":"[object] (RuntimeException(code: 0): Source class \"\\Nyholm\\Psr7\\Factory\\Psr17\" for \"Nyholm\\Psr7\\Factory\\Psr17Factory\" generation does not exist. at /var/www/html/magento/vendor/magento/framework/Code/Generator.php:223)"} []
+[2025-06-30T11:24:52.266826+00:00] main.DEBUG: Source class "\Phalcon\Http\Message\Uri" for "Phalcon\Http\Message\UriFactory" generation does not exist. {"exception":"[object] (RuntimeException(code: 0): Source class \"\\Phalcon\\Http\\Message\\Uri\" for \"Phalcon\\Http\\Message\\UriFactory\" generation does not exist. at /var/www/html/magento/vendor/magento/framework/Code/Generator.php:223)"} []
+[2025-06-30T11:24:52.266987+00:00] main.DEBUG: Source class "\Phalcon\Http\Message\Uri" for "Phalcon\Http\Message\UriFactory" generation does not exist. {"exception":"[object] (RuntimeException(code: 0): Source class \"\\Phalcon\\Http\\Message\\Uri\" for \"Phalcon\\Http\\Message\\UriFactory\" generation does not exist. at /var/www/html/magento/vendor/magento/framework/Code/Generator.php:223)"} []
+[2025-06-30T11:24:52.267141+00:00] main.DEBUG: Source class "\Nyholm\Psr7\Factory\Psr17" for "Nyholm\Psr7\Factory\Psr17Factory" generation does not exist. {"exception":"[object] (RuntimeException(code: 0): Source class \"\\Nyholm\\Psr7\\Factory\\Psr17\" for \"Nyholm\\Psr7\\Factory\\Psr17Factory\" generation does not exist. at /var/www/html/magento/vendor/magento/framework/Code/Generator.php:223)"} []
+[2025-06-30T11:24:52.267207+00:00] main.DEBUG: Source class "\Nyholm\Psr7\Factory\Psr17" for "Nyholm\Psr7\Factory\Psr17Factory" generation does not exist. {"exception":"[object] (RuntimeException(code: 0): Source class \"\\Nyholm\\Psr7\\Factory\\Psr17\" for \"Nyholm\\Psr7\\Factory\\Psr17Factory\" generation does not exist. at /var/www/html/magento/vendor/magento/framework/Code/Generator.php:223)"} []
+[2025-06-30T11:24:52.269716+00:00] main.DEBUG: Source class "\Phalcon\Http\Message\ServerRequest" for "Phalcon\Http\Message\ServerRequestFactory" generation does not exist. {"exception":"[object] (RuntimeException(code: 0): Source class \"\\Phalcon\\Http\\Message\\ServerRequest\" for \"Phalcon\\Http\\Message\\ServerRequestFactory\" generation does not exist. at /var/www/html/magento/vendor/magento/framework/Code/Generator.php:223)"} []
+[2025-06-30T11:24:52.269830+00:00] main.DEBUG: Source class "\Phalcon\Http\Message\ServerRequest" for "Phalcon\Http\Message\ServerRequestFactory" generation does not exist. {"exception":"[object] (RuntimeException(code: 0): Source class \"\\Phalcon\\Http\\Message\\ServerRequest\" for \"Phalcon\\Http\\Message\\ServerRequestFactory\" generation does not exist. at /var/www/html/magento/vendor/magento/framework/Code/Generator.php:223)"} []
+[2025-06-30T11:24:52.269975+00:00] main.DEBUG: Source class "\Nyholm\Psr7\Factory\Psr17" for "Nyholm\Psr7\Factory\Psr17Factory" generation does not exist. {"exception":"[object] (RuntimeException(code: 0): Source class \"\\Nyholm\\Psr7\\Factory\\Psr17\" for \"Nyholm\\Psr7\\Factory\\Psr17Factory\" generation does not exist. at /var/www/html/magento/vendor/magento/framework/Code/Generator.php:223)"} []
+[2025-06-30T11:24:52.270041+00:00] main.DEBUG: Source class "\Nyholm\Psr7\Factory\Psr17" for "Nyholm\Psr7\Factory\Psr17Factory" generation does not exist. {"exception":"[object] (RuntimeException(code: 0): Source class \"\\Nyholm\\Psr7\\Factory\\Psr17\" for \"Nyholm\\Psr7\\Factory\\Psr17Factory\" generation does not exist. at /var/www/html/magento/vendor/magento/framework/Code/Generator.php:223)"} []
+[2025-06-30T11:24:52.301247+00:00] main.ERROR: Could not validate a connection to Elasticsearch. No alive nodes. All the 1 nodes seem to be down.
+#0 /var/www/html/magento/setup/src/Magento/Setup/Model/SearchConfig.php(69): Magento\Setup\Model\SearchConfig->validateSearchEngine()
+#1 /var/www/html/magento/setup/src/Magento/Setup/Model/Installer.php(1261): Magento\Setup\Model\SearchConfig->saveConfiguration()
+#2 [internal function]: Magento\Setup\Model\Installer->installSearchConfiguration()
+#3 /var/www/html/magento/setup/src/Magento/Setup/Model/Installer.php(422): call_user_func_array()
+#4 /var/www/html/magento/setup/src/Magento/Setup/Console/Command/InstallCommand.php(239): Magento\Setup\Model\Installer->install()
+#5 /var/www/html/magento/vendor/symfony/console/Command/Command.php(326): Magento\Setup\Console\Command\InstallCommand->execute()
+#6 /var/www/html/magento/vendor/symfony/console/Application.php(1078): Symfony\Component\Console\Command\Command->run()
+#7 /var/www/html/magento/vendor/symfony/console/Application.php(324): Symfony\Component\Console\Application->doRunCommand()
+#8 /var/www/html/magento/vendor/magento/framework/Console/Cli.php(122): Symfony\Component\Console\Application->doRun()
+#9 /var/www/html/magento/vendor/symfony/console/Application.php(175): Magento\Framework\Console\Cli->doRun()
+#10 /var/www/html/magento/bin/magento(23): Symfony\Component\Console\Application->run()
+#11 {main} [] []
+[2025-07-01T04:02:06.648887+00:00] main.ERROR: SQLSTATE[HY000]: General error: 1419 You do not have the SUPER privilege and binary logging is enabled (you *might* want to use the less safe log_bin_trust_function_creators variable), query was: CREATE TRIGGER trg_catalog_product_entity_int_after_insert AFTER INSERT ON catalog_product_entity_int FOR EACH ROW
+BEGIN
+INSERT IGNORE INTO `catalog_product_category_cl` (`entity_id`) VALUES (NEW.`entity_id`);
+INSERT IGNORE INTO `catalog_product_attribute_cl` (`entity_id`) VALUES (NEW.`entity_id`);
+INSERT IGNORE INTO `catalog_product_price_cl` (`entity_id`) VALUES (NEW.`entity_id`);
+INSERT IGNORE INTO `catalogrule_product_cl` (`entity_id`) VALUES (NEW.`entity_id`);
+INSERT IGNORE INTO `catalogsearch_fulltext_cl` (`entity_id`) VALUES (NEW.`entity_id`);
+END
+#0 /var/www/html/magento/vendor/magento/framework/DB/Statement/Pdo/Mysql.php(89): Magento\Framework\DB\Statement\Pdo\Mysql->tryExecute()
+#1 /var/www/html/magento/vendor/magento/zend-db/library/Zend/Db/Statement.php(313): Magento\Framework\DB\Statement\Pdo\Mysql->_execute()
+#2 /var/www/html/magento/vendor/magento/zend-db/library/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute()
+#3 /var/www/html/magento/vendor/magento/zend-db/library/Zend/Db/Adapter/Pdo/Abstract.php(242): Zend_Db_Adapter_Abstract->query()
+#4 /var/www/html/magento/vendor/magento/framework/DB/Adapter/Pdo/Mysql.php(641): Zend_Db_Adapter_Pdo_Abstract->query()
+#5 /var/www/html/magento/vendor/magento/framework/DB/Adapter/Pdo/Mysql.php(667): Magento\Framework\DB\Adapter\Pdo\Mysql->Magento\Framework\DB\Adapter\Pdo\{closure}()
+#6 /var/www/html/magento/vendor/magento/framework/DB/Adapter/Pdo/Mysql.php(641): Magento\Framework\DB\Adapter\Pdo\Mysql->performQuery()
+#7 /var/www/html/magento/vendor/magento/framework/DB/Adapter/Pdo/Mysql.php(753): Magento\Framework\DB\Adapter\Pdo\Mysql->_query()
+#8 /var/www/html/magento/generated/code/Magento/Framework/DB/Adapter/Pdo/Mysql/Interceptor.php(104): Magento\Framework\DB\Adapter\Pdo\Mysql->multiQuery()
+#9 /var/www/html/magento/vendor/magento/framework/DB/Adapter/Pdo/Mysql.php(4195): Magento\Framework\DB\Adapter\Pdo\Mysql\Interceptor->multiQuery()
+#10 /var/www/html/magento/generated/code/Magento/Framework/DB/Adapter/Pdo/Mysql/Interceptor.php(851): Magento\Framework\DB\Adapter\Pdo\Mysql->createTrigger()
+#11 /var/www/html/magento/vendor/magento/framework/Mview/View/Subscription.php(222): Magento\Framework\DB\Adapter\Pdo\Mysql\Interceptor->createTrigger()
+#12 /var/www/html/magento/vendor/magento/framework/Mview/View.php(229): Magento\Framework\Mview\View\Subscription->remove()
+#13 /var/www/html/magento/generated/code/Magento/Framework/Mview/View/Interceptor.php(104): Magento\Framework\Mview\View->unsubscribe()
+#14 /var/www/html/magento/vendor/magento/module-indexer/Setup/Recurring.php(141): Magento\Framework\Mview\View\Interceptor->unsubscribe()
+#15 /var/www/html/magento/setup/src/Magento/Setup/Model/Installer.php(1171): Magento\Indexer\Setup\Recurring->install()
+#16 /var/www/html/magento/setup/src/Magento/Setup/Model/Installer.php(972): Magento\Setup\Model\Installer->handleDBSchemaData()
+#17 [internal function]: Magento\Setup\Model\Installer->installSchema()
+#18 /var/www/html/magento/setup/src/Magento/Setup/Model/Installer.php(422): call_user_func_array()
+#19 /var/www/html/magento/setup/src/Magento/Setup/Console/Command/InstallCommand.php(239): Magento\Setup\Model\Installer->install()
+#20 /var/www/html/magento/vendor/symfony/console/Command/Command.php(326): Magento\Setup\Console\Command\InstallCommand->execute()
+#21 /var/www/html/magento/vendor/symfony/console/Application.php(1078): Symfony\Component\Console\Command\Command->run()
+#22 /var/www/html/magento/vendor/symfony/console/Application.php(324): Symfony\Component\Console\Application->doRunCommand()
+#23 /var/www/html/magento/vendor/magento/framework/Console/Cli.php(122): Symfony\Component\Console\Application->doRun()
+#24 /var/www/html/magento/vendor/symfony/console/Application.php(175): Magento\Framework\Console\Cli->doRun()
+#25 /var/www/html/magento/bin/magento(23): Symfony\Component\Console\Application->run()
+#26 {main} [] []
+[2025-07-01T04:06:45.286085+00:00] main.ERROR: SQLSTATE[HY000]: General error: 1419 You do not have the SUPER privilege and binary logging is enabled (you *might* want to use the less safe log_bin_trust_function_creators variable), query was: CREATE TRIGGER trg_catalog_product_entity_int_after_insert AFTER INSERT ON catalog_product_entity_int FOR EACH ROW
+BEGIN
+INSERT IGNORE INTO `catalog_product_category_cl` (`entity_id`) VALUES (NEW.`entity_id`);
+INSERT IGNORE INTO `catalog_product_attribute_cl` (`entity_id`) VALUES (NEW.`entity_id`);
+INSERT IGNORE INTO `catalog_product_price_cl` (`entity_id`) VALUES (NEW.`entity_id`);
+INSERT IGNORE INTO `catalogrule_product_cl` (`entity_id`) VALUES (NEW.`entity_id`);
+INSERT IGNORE INTO `catalogsearch_fulltext_cl` (`entity_id`) VALUES (NEW.`entity_id`);
+END
+#0 /var/www/html/magento/vendor/magento/framework/DB/Statement/Pdo/Mysql.php(89): Magento\Framework\DB\Statement\Pdo\Mysql->tryExecute()
+#1 /var/www/html/magento/vendor/magento/zend-db/library/Zend/Db/Statement.php(313): Magento\Framework\DB\Statement\Pdo\Mysql->_execute()
+#2 /var/www/html/magento/vendor/magento/zend-db/library/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute()
+#3 /var/www/html/magento/vendor/magento/zend-db/library/Zend/Db/Adapter/Pdo/Abstract.php(242): Zend_Db_Adapter_Abstract->query()
+#4 /var/www/html/magento/vendor/magento/framework/DB/Adapter/Pdo/Mysql.php(641): Zend_Db_Adapter_Pdo_Abstract->query()
+#5 /var/www/html/magento/vendor/magento/framework/DB/Adapter/Pdo/Mysql.php(667): Magento\Framework\DB\Adapter\Pdo\Mysql->Magento\Framework\DB\Adapter\Pdo\{closure}()
+#6 /var/www/html/magento/vendor/magento/framework/DB/Adapter/Pdo/Mysql.php(641): Magento\Framework\DB\Adapter\Pdo\Mysql->performQuery()
+#7 /var/www/html/magento/vendor/magento/framework/DB/Adapter/Pdo/Mysql.php(753): Magento\Framework\DB\Adapter\Pdo\Mysql->_query()
+#8 /var/www/html/magento/generated/code/Magento/Framework/DB/Adapter/Pdo/Mysql/Interceptor.php(104): Magento\Framework\DB\Adapter\Pdo\Mysql->multiQuery()
+#9 /var/www/html/magento/vendor/magento/framework/DB/Adapter/Pdo/Mysql.php(4195): Magento\Framework\DB\Adapter\Pdo\Mysql\Interceptor->multiQuery()
+#10 /var/www/html/magento/generated/code/Magento/Framework/DB/Adapter/Pdo/Mysql/Interceptor.php(851): Magento\Framework\DB\Adapter\Pdo\Mysql->createTrigger()
+#11 /var/www/html/magento/vendor/magento/framework/Mview/View/Subscription.php(222): Magento\Framework\DB\Adapter\Pdo\Mysql\Interceptor->createTrigger()
+#12 /var/www/html/magento/vendor/magento/framework/Mview/View.php(229): Magento\Framework\Mview\View\Subscription->remove()
+#13 /var/www/html/magento/generated/code/Magento/Framework/Mview/View/Interceptor.php(104): Magento\Framework\Mview\View->unsubscribe()
+#14 /var/www/html/magento/vendor/magento/module-indexer/Setup/Recurring.php(141): Magento\Framework\Mview\View\Interceptor->unsubscribe()
+#15 /var/www/html/magento/setup/src/Magento/Setup/Model/Installer.php(1171): Magento\Indexer\Setup\Recurring->install()
+#16 /var/www/html/magento/setup/src/Magento/Setup/Model/Installer.php(972): Magento\Setup\Model\Installer->handleDBSchemaData()
+#17 [internal function]: Magento\Setup\Model\Installer->installSchema()
+#18 /var/www/html/magento/setup/src/Magento/Setup/Model/Installer.php(422): call_user_func_array()
+#19 /var/www/html/magento/setup/src/Magento/Setup/Console/Command/InstallCommand.php(239): Magento\Setup\Model\Installer->install()
+#20 /var/www/html/magento/vendor/symfony/console/Command/Command.php(326): Magento\Setup\Console\Command\InstallCommand->execute()
+#21 /var/www/html/magento/vendor/symfony/console/Application.php(1078): Symfony\Component\Console\Command\Command->run()
+#22 /var/www/html/magento/vendor/symfony/console/Application.php(324): Symfony\Component\Console\Application->doRunCommand()
+#23 /var/www/html/magento/vendor/magento/framework/Console/Cli.php(122): Symfony\Component\Console\Application->doRun()
+#24 /var/www/html/magento/vendor/symfony/console/Application.php(175): Magento\Framework\Console\Cli->doRun()
+#25 /var/www/html/magento/bin/magento(23): Symfony\Component\Console\Application->run()
+#26 {main} [] []
