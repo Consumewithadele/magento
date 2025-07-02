@@ -8,7 +8,7 @@ php bin/magento setup:di:compile
 php bin/magento setup:static-content:deploy
 
 4.) Login to admin and navigate to content -> configuration and set Pereft/luma child  theme and save.
-5.) Now create demo product in admin to check on frontend if button color is yellow or not.
+5.) Now create demo product in admin to check on frontend if button colour is yellow or not.
 
 6.) I have also created custom layout so navigate to CMS-> Pages 
 -> create new CMS page and select layout custom layout and same the page
